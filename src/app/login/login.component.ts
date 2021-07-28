@@ -16,7 +16,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(signInForm: NgForm){
-    console.log(signInForm.value);
+    //console.log(signInForm.value);
+    var email = signInForm.value.email;
+    localStorage.setItem("Email",JSON.stringify(email));
+
+    var password = signInForm.value.password;
+    localStorage.setItem("Password",JSON.stringify(password));
+    
     const signinData = new SignInData(signInForm.value.email, signInForm.value.password);
     this.authenticationService.authenticate(signinData)
   }

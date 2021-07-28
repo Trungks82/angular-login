@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  newEmail: any
+  newPassword: any
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  get email():any {
+    return localStorage.getItem('Email')
+  }
+
+  get password():any {
+    return localStorage.getItem('Password')
+  }
 }
